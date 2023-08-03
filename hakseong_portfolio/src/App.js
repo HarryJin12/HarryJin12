@@ -15,7 +15,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          진학성 포트폴리오
         </a>
       </header>
     </div>
