@@ -20,7 +20,7 @@
 
 주제 : 광주광역시 범죄 공공데이터를 활용한 광주 안전 정보서비스
 
-<img src="/광주안전정보_Main.png" width="40%" height="30%" title="px(픽셀) 크기 설정" alt="RubberDuck"></img>
+<img src="./hakseong_portfolio/src/components/img/광주안전정보_Main.png" width="40%" height="30%" title="px(픽셀) 크기 설정" alt="RubberDuck"></img>
 
 
 맡은 역활 : 팀장, 그래프 라이브러리 연동, 카카오 지도 API 연동, 프론트엔드 와 데이터베이스 연동 , 프로젝트 총괄
