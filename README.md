@@ -24,12 +24,31 @@
 ![띠용띠용팀 Main](https://github.com/2023-SMHRD-SW-BigData-1/Gwangju_MAP/assets/132454951/0d739720-125a-455a-b18b-d29f236a19e9)
 
 
-맡은 역활 : 팀장, 프론트엔드 와 데이터베이스 연동 
+맡은 역활 : 팀장, 프론트엔드 와 데이터베이스 연동 , 프로젝트 총괄
 
 사용한 라이브러리 및 API : Recharts(그래프라이브러리), 카카오 오픈 지도 API
 
-#### 사용예제
-![image](https://github.com/HarryJin12/HarryJin12/assets/132454951/2b05a5d7-cbf7-4440-957a-d4779b17cbce)
+#### 그래프 라이브러리 예시
+- Recharts 그래프 라이브러리를 사용할려면 설치
+
+~~~
+$ npm install recharts
+~~~
+
+- index.html 안에 스크립트 코드 추가
+~~~
+<script src="https://unpkg.com/react/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/prop-types/prop-types.min.js"></script>
+<script src="https://unpkg.com/recharts/umd/Recharts.js"></script>
+~~~
+- 위의 과정을 마치면 원하시는 API 클릭 후 그래프를 찾고 안의 코드를 복사 하고 사용할려는 곳에 붙여 넣기 해주면 그래프가 나옵니다.
+  
+#### 데이터 넣기  
+그래프 라이브러리 사용할 때 가장 문제가 되었던게 "데이터를 어떻게 넣을까?" 이었습니다.
+
+
+
 
 
 
