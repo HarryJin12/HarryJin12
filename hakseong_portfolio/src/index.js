@@ -11,9 +11,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   // basename={process.env.PUBLIC_URL}
   //  basename={process.env.PUBLIC_URL} 적어줘야 한다.
-  <BrowserRouter basename={process.env.PUBLIC_URL}>
+  // <BrowserRouter basename={process.env.PUBLIC_URL}>
     <App /> 
-  </BrowserRouter>
+  // </BrowserRouter>
   
   
 );
