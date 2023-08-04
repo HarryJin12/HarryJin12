@@ -31,7 +31,7 @@
 <img src="./hakseong_portfolio/src/components/img/광주안전정보_Main.png" width="50%" height="40%" title="px(픽셀) 크기 설정" alt="G-Main"></img>
 
 
-맡은 역활 : 팀장, 그래프 라이브러리 연동, 카카오 지도 API 연동, 프론트엔드 와 데이터베이스 연동 , 프로젝트 총괄
+맡은 역할 : 팀장, 그래프 라이브러리 연동, 카카오 지도 API 연동, 프론트엔드 와 데이터베이스 연동 , 프로젝트 총괄
 
 사용한 라이브러리 및 API : Recharts(그래프라이브러리), 카카오 오픈 지도 API
 
