@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 // import App from './App';
 import App from './components/Main';
-import { HashRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter , Route, Routes } from "react-router-dom";
 
 import reportWebVitals from './reportWebVitals';
 
@@ -11,9 +11,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   // basename={process.env.PUBLIC_URL}
   //  basename={process.env.PUBLIC_URL} 적어줘야 한다.
-  <HashRouter basename = "/">
-    <App />
-  </HashRouter>
+  <BrowserRouter basename={process.env.PUBLIC_URL}>
+    <App /> 
+  </BrowserRouter>
   
   
 );
