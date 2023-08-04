@@ -30,6 +30,11 @@
 
 <img src="./hakseong_portfolio/src/components/img/광주안전정보_Main.png" width="50%" height="40%" title="px(픽셀) 크기 설정" alt="G-Main"></img>
 
+- 서비스
+- 사용자가 선택한 연도와 구의 관한 5대범죄검거현황과, CCTV 설치 수, 보안등(가로등) 설치 수, 광주 아동안전지킴이집 수, 범죄율 등을 확인할 수 있습니다.
+- 실시간 게시판을 통해 갑자기 생기는 범죄문제들을 다른 사용자들에게 알릴 수 있고, 범죄에 관한 정보를 실시간으로 공유 할 수 있습니다.
+- 안전지도를 통하여 주변의 파출소, 경찰서 위치나 정보를 확인할 수 있습니다.
+
 
 맡은 역할 : 팀장, 그래프 라이브러리 연동, 카카오 지도 API 연동, 프론트엔드 와 데이터베이스 연동 , 프로젝트 총괄
 
@@ -91,16 +96,36 @@ $ npm install recharts
 <script src="https://unpkg.com/recharts/umd/Recharts.js"></script>
 ~~~
 - 위의 과정을 마치면 원하시는 API 클릭 후 그래프를 찾고 안의 코드를 복사 하고 사용할려는 곳에 붙여 넣기 해주면 그래프가 나옵니다.
+
+
   
 #### 🛠️데이터 넣기  
 그래프 라이브러리 사용할 때 가장 문제가 되었던게 "그래프의 데이터 값을 어떻게 넣을까?" 이었습니다.
-이 문제를 해결하기 위한 방법은 두가지가 있었습니다.
-1. 코드의 형식을 함수형 컴포넌트로 바꾸기
-2. 매개변수를 통해 값 전달하기
 
-1번의 문제는 함수형 컴포넌트로 바꾸기 매우 까다로운 코드들이 많아 시간이 많이 걸려서 2번의 방법으로 문제를 해결했습니다.
+코드에서 바로 데이터 베이스 데이터를 가져오기가 안되서 이 문제를 해결하기 위해 매개변수를 통해 값을 
+전달해서 문제를 해결했습니다.
 
+데이터도 그냥 넣으면 그래프에 적용되는게 아니여서 리스트 형식으로 만들어 넣었습니다.
+
+   
+- map함수로 받아오는 데이터베이스 구몬
+    
+
+~~~
+let sql = `select cctv_year "name", sum(sum(cctv_cnt)) over (order by cctv_year) "pv" from tbl_cctv where cctv_region like :region group by cctv_year`;
+let sql2 = `select crime_year "name", crime_count "uv" from tbl_crime where crime_region=:region order by crime_year`;
+~~~
+   
+#### 
 - Main.jsx에서 사용자가 선택한 연도와 구 데이터를 오라클 데이터베이스에서 가져오기
+저는 사용자가 원하는 연도과 구를 선택하면 비동기 방식으로 바로 데이터를 확인하게 하고 싶었습니다.
+
+#### 
+    
+
+https://github.com/HarryJin12/HarryJin12/assets/132454951/f778ebce-b419-4c63-a46a-12580055ecb5
+
+
 ~~~
  useEffect(() => {
     axios.get('http://localhost:8888/crimeCounter', {
@@ -115,7 +140,11 @@ $ npm install recharts
       .catch(() => { });
   }, [selectedYear, selectedRegion]);
 ~~~
+
+
 - 받아온 데이터를 매개변수를 통해 라이브러리 차트에 넣어주기
+
+
 ~~~
 <div className='FCT2' style={{ width: 700, height: 500 }} > <ThirdChart cdata3={ch3} />
 ~~~
