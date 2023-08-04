@@ -115,14 +115,49 @@ $ npm install recharts
 let sql = `select cctv_year "name", sum(sum(cctv_cnt)) over (order by cctv_year) "pv" from tbl_cctv where cctv_region like :region group by cctv_year`;
 let sql2 = `select crime_year "name", crime_count "uv" from tbl_crime where crime_region=:region order by crime_year`;
 ~~~
-   
+     
 #### 
-- Main.jsx에서 사용자가 선택한 연도와 구 데이터를 오라클 데이터베이스에서 가져오기
-저는 사용자가 원하는 연도과 구를 선택하면 비동기 방식으로 바로 데이터를 확인하게 하고 싶었습니다.
+-- -- 
+#### 비동기 방식으로 보여주는 데이터
 
-#### 
-    
+  
++ 사용자는 홈페이지 상단에서 연도와 구를 선택하여 비동기 방식으로 바뀌는 데이터를 바로 확인할 수 있습니다.
 
+~~~
+<div className="dropdown d-flex">
+        <div className="dropdown-group me-3">
+          <a className="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            연도선택
+          </a>
+          <ul className="dropdown-menu">
+            <li><a className="dropdown-item" href="#" onClick={() => handleYearSelect(2017)}>2017</a></li>
+            <li><a className="dropdown-item" href="#" onClick={() => handleYearSelect(2018)}>2018</a></li>
+            <li><a className="dropdown-item" href="#" onClick={() => handleYearSelect(2019)}>2019</a></li>
+            <li><a className="dropdown-item" href="#" onClick={() => handleYearSelect(2020)}>2020</a></li>
+            <li><a className="dropdown-item" href="#" onClick={() => handleYearSelect(2021)}>2021</a></li>
+          </ul>
+        </div>
+        <div className="dropdown-group">
+          <a className="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            구 선택
+          </a>
+          <ul className="dropdown-menu">
+            <li><a className="dropdown-item" href="#" onClick={() => handleRegionSelect('광산구')}>광산구</a></li>
+            <li><a className="dropdown-item" href="#" onClick={() => handleRegionSelect('남구')}>남구</a></li>
+            <li><a className="dropdown-item" href="#" onClick={() => handleRegionSelect('서구')}>서구</a></li>
+            <li><a className="dropdown-item" href="#" onClick={() => handleRegionSelect('북구')}>북구</a></li>
+            <li><a className="dropdown-item" href="#" onClick={() => handleRegionSelect('동구')}>동구</a></li>
+          </ul>
+        </div>
+      </div>
+~~~
+
+버튼은 부트스트랩을 사용하여 만들었습니다
+
+버튼 클릭 시 받은 값을 바로 데이터베이스 구몬에 들어가고 바로 실행시키게 만들었습니다.
+
+
+  
 https://github.com/HarryJin12/HarryJin12/assets/132454951/f778ebce-b419-4c63-a46a-12580055ecb5
 
 
@@ -151,11 +186,25 @@ https://github.com/HarryJin12/HarryJin12/assets/132454951/f778ebce-b419-4c63-a46
 
 -- -- --
 ### 🖼️카카오 오픈 지도 API 사용
+
+ 
+  
+![Main_map](https://github.com/HarryJin12/HarryJin12/assets/132454951/dfbad424-bdd9-4d09-967f-45ebccdfc2c6)
+
+
+  
+
 - public/index.html 안에 스크립트 코드 추가
+
+  
 ~~~
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=발급받은 APP KEY를 넣으시면 됩니다."></script>
 ~~~
+
+
 - 사용할 지도의 코드를 가져와 수정 후 사용하기
+
+   
 ~~~
 import React, { useEffect, useState } from "react";
 const { kakao } = window;
@@ -187,6 +236,8 @@ export default function Kakaomap({ searchPlace }) {
 ~~~
 - 실제 코드가 너무 길어 앞 부분만 가져 왔습니다.
   지도의 검색 기능을 넣을려면 미리 검색어 지정을 해줘야 실행이 됩니다.
+  
+  그리고 새로 .jsx을 만들어 검색해서 나오는 값들을 리스트 모양으로 나오게끔 css를 적용시켰습니다.
 
 ~~~
 import React, { useState } from 'react';
