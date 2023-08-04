@@ -10,7 +10,8 @@ import reportWebVitals from './reportWebVitals';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   
-  <BrowserRouter>
+  //  basename={process.env.PUBLIC_URL} 적어줘야 한다.
+  <BrowserRouter  basename={process.env.PUBLIC_URL}>
   <App />
   </BrowserRouter>
   
