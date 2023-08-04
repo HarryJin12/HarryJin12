@@ -11,7 +11,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   // basename={process.env.PUBLIC_URL}
   //  basename={process.env.PUBLIC_URL} 적어줘야 한다.
-  <HashRouter>
+  <HashRouter basename = "/">
     <App />
   </HashRouter>
   
