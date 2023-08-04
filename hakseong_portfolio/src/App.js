@@ -7,10 +7,11 @@ import Main from './components/Main';
 function App() {
   return (
    <div>
-  
+{/*   
     <Routes>
-    <Main></Main>
-    </Routes>
+    <Route path='/' element={Main}></Route>
+    </Routes> */}
+<h1>test App</h1>
 
    </div>
 
