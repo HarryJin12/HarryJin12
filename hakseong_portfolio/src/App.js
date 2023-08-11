@@ -9,10 +9,7 @@ function App() {
    <div>
   
 
-     <Routes> 
-    <Route path='/HarryJin12' element={Main}></Route>
-    </Routes> 
- <h1>test App</h1> 
+  <h1>테스트</h1>
 
    </div>
 
