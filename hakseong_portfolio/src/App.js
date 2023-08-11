@@ -9,8 +9,7 @@ function App() {
    <div>
   
 
-  <h1>테스트</h1>
-
+ <Main/>
    </div>
 
    
