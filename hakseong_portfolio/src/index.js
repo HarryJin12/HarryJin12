@@ -1,22 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+// import App from './App';
 // import App from './components/Main';
 import { BrowserRouter, Routes ,  } from "react-router-dom";
 
 import reportWebVitals from './reportWebVitals';
+import Main from './components/Main';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   // basename={process.env.PUBLIC_URL}
   //  basename={process.env.PUBLIC_URL} 적어줘야 한다.
 
-   <BrowserRouter>
-   
-   <App /> 
-   </BrowserRouter>
-  
+  <HashRouter>
+  <Routes>
+    <Route path="/" element={<Main/>} />
+  </Routes>
+</HashRouter>
    
 
   
